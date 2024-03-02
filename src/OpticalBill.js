@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './OpticalBill.css';
+import PrintableBill from './PrintableBill'; // Add this line
 
 function OpticalBill() {
   const [customerName, setCustomerName] = useState('');
@@ -28,60 +29,20 @@ function OpticalBill() {
   return (
     <div className="optical-bill-container">
       {viewFinalForm ? (
-        <div>
-          <h2>Optical Shop Bill</h2>
-          <table className="printable-table">
-            <tbody>
-              <tr>
-                <td>Customer Name:</td>
-                <td>{customerName}</td>
-              </tr>
-              <tr>
-                <td>Customer Address:</td>
-                <td>{customerAddress}</td>
-              </tr>
-              <tr>
-                <td>Glass Brand:</td>
-                <td>{glassBrand}</td>
-              </tr>
-              <tr>
-                <td>Glass Type:</td>
-                <td>{glassType}</td>
-              </tr>
-              <tr>
-                <td>Glass Quality:</td>
-                <td>{glassQuality}</td>
-              </tr>
-              <tr>
-                <td>Frame Brand:</td>
-                <td>{frameBrand}</td>
-              </tr>
-              <tr>
-                <td>Quantity:</td>
-                <td>{quantity}</td>
-              </tr>
-              <tr>
-                <td>Price:</td>
-                <td>{price}</td>
-              </tr>
-              <tr>
-                <td>Total:</td>
-                <td>{total}</td>
-              </tr>
-              <tr>
-                <td colSpan="2">
-                  <div className="disclaimer">
-                    <p><strong>Disclaimer:</strong> After payment of advance, it is non-refundable.</p>
-                  </div>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-          <div className="button-group">
-            <button onClick={handleEditForm}>Edit</button>
-            <button onClick={() => window.print()}>Print</button>
-          </div>
-        </div>
+        <PrintableBill
+          data={{
+            customerName,
+            customerAddress,
+            glassBrand,
+            glassType,
+            glassQuality,
+            frameBrand,
+            quantity,
+            price,
+            total,
+          }}
+          onEditForm={handleEditForm}
+        />
       ) : (
         <div>
           <h2>Optical Shop Bill</h2>
