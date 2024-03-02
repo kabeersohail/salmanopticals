@@ -45,33 +45,38 @@ const PrintableBill = () => {
         </table>
       </div>
 
-      {/* Footer section */}
-      <div className="footer">
-        <table>
-          <tbody>
-            <tr>
-              <td>Subtotal:</td>
-              <td>200</td>
-            </tr>
-            <tr>
-              <td>Tax (15%):</td>
-              <td>30</td>
-            </tr>
-            <tr>
-              <td>Vat (5%):</td>
-              <td>10</td>
-            </tr>
-            <tr>
-              <td>Total Due:</td>
-              <td>240</td>
-            </tr>
-          </tbody>
-        </table>
-        {/* Disclaimer */}
-        <div className="disclaimer">
-          <p><strong>Disclaimer:</strong> After payment of advance, it is non-refundable.</p>
-        </div>
-      </div>
+{/* Footer section */}
+<div className="footer">
+  {/* Subtotal table */}
+  <div className="subtotal-container">
+    <table className="subtotal-table">
+      <tbody>
+        <tr>
+          <td>Subtotal:</td>
+          <td>200</td>
+        </tr>
+        <tr>
+          <td>Tax (15%):</td>
+          <td>30</td>
+        </tr>
+        <tr>
+          <td>Vat (5%):</td>
+          <td>10</td>
+        </tr>
+        <tr>
+          <td>Total Due:</td>
+          <td>240</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  {/* Disclaimer */}
+  <div className="disclaimer">
+    <p><strong>Disclaimer:</strong> After payment of advance, it is non-refundable.</p>
+  </div>
+</div>
+
+
 
       {/* Thank you message */}
       <div className="thank-you">
