@@ -1,0 +1,78 @@
+/* Reset default margin and padding */
+body {
+    margin: 0;
+    padding: 0;
+  }
+  
+/* Top left design */
+.triangle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-top: 100px solid transparent; /* Change border-left to border-top */
+  border-right: 100px solid transparent; /* Change border-bottom to border-right */
+  border-bottom: none; /* Remove border-bottom */
+  border-left: none; /* Remove border-left */
+  border-top-color: #ff5733; /* Orange color, adjust as needed */
+}
+  
+  /* Top right logo and name */
+  .logo-container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 20px;
+  }
+  
+  .logo {
+    max-width: 100px; /* Adjust size as needed */
+  }
+  
+  /* Invoice title */
+  .invoice-title {
+    text-align: center;
+    margin-top: 50px;
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  /* Table styling */
+  .table-container {
+    margin: 50px auto; /* Center the table */
+  }
+  
+  .invoice-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  th {
+    background-color: #f2f2f2;
+  }
+  
+  /* Footer section */
+  .footer {
+    margin-top: 50px;
+    text-align: right;
+  }
+  
+  /* Disclaimer */
+  .disclaimer {
+    text-align: center;
+    font-style: italic;
+  }
+  
+  /* Thank you message */
+  .thank-you {
+    text-align: center;
+    margin-top: 20px;
+  }
+  

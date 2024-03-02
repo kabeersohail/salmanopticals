@@ -1,63 +1,84 @@
 import React from 'react';
 import './PrintableBill.css';
 
-const PrintableBill = ({ data, onEditForm }) => {
+const PrintableBill = () => {
   return (
     <div className="printable-bill-container">
-      <h2>Optical Shop Bill</h2>
-      <table className="printable-table">
-        <tbody>
-          <tr>
-            <td>Customer Name:</td>
-            <td>{data.customerName}</td>
-          </tr>
-          <tr>
-            <td>Customer Address:</td>
-            <td>{data.customerAddress}</td>
-          </tr>
-          <tr>
-            <td>Glass Brand:</td>
-            <td>{data.glassBrand}</td>
-          </tr>
-          <tr>
-            <td>Glass Type:</td>
-            <td>{data.glassType}</td>
-          </tr>
-          <tr>
-            <td>Glass Quality:</td>
-            <td>{data.glassQuality}</td>
-          </tr>
-          <tr>
-            <td>Frame Brand:</td>
-            <td>{data.frameBrand}</td>
-          </tr>
-          <tr>
-            <td>Quantity:</td>
-            <td>{data.quantity}</td>
-          </tr>
-          <tr>
-            <td>Price:</td>
-            <td>{data.price}</td>
-          </tr>
-          <tr>
-            <td>Total:</td>
-            <td>{data.total}</td>
-          </tr>
-          <tr>
-            <td colSpan="2">
-              <div className="disclaimer">
-                <p><strong>Disclaimer:</strong> After payment of advance, it is non-refundable.</p>
-              </div>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-      <div className="button-group">
-        <button onClick={onEditForm}>Edit</button>
-        <button onClick={() => window.print()}>Print</button>
+      {/* Top left design */}
+      <div className="triangle"></div>
+
+      {/* Top right logo and name */}
+      <div className="logo-container">
+        <img src="your-logo.png" alt="Logo" className="logo" />
+        <h2>Salman Opticals</h2>
+      </div>
+
+      {/* Invoice title */}
+      <div className="invoice-title">
+        <h1>Invoice</h1>
+        {/* Other details like invoice number, date, name, email, etc. */}
+      </div>
+
+      {/* Table */}
+      <div className="table-container">
+        <table className="invoice-table">
+          <thead>
+            <tr>
+              <th>S.No</th>
+              <th>Description</th>
+              <th>Price</th>
+              <th>QTY</th>
+              <th>Total</th>
+            </tr>
+          </thead>
+          <tbody>
+            {/* Loop through your items and generate rows dynamically */}
+            <tr>
+              <td>1</td>
+              <td>Item description</td>
+              <td>100</td>
+              <td>2</td>
+              <td>200</td>
+            </tr>
+            {/* Add more rows as needed */}
+          </tbody>
+        </table>
+      </div>
+
+      {/* Footer section */}
+      <div className="footer">
+        <table>
+          <tbody>
+            <tr>
+              <td>Subtotal:</td>
+              <td>200</td>
+            </tr>
+            <tr>
+              <td>Tax (15%):</td>
+              <td>30</td>
+            </tr>
+            <tr>
+              <td>Vat (5%):</td>
+              <td>10</td>
+            </tr>
+            <tr>
+              <td>Total Due:</td>
+              <td>240</td>
+            </tr>
+          </tbody>
+        </table>
+        {/* Disclaimer */}
+        <div className="disclaimer">
+          <p><strong>Disclaimer:</strong> After payment of advance, it is non-refundable.</p>
+        </div>
+      </div>
+
+      {/* Thank you message */}
+      <div className="thank-you">
+        <p>Thank you for your business!</p>
       </div>
     </div>
   );
-};
+}
 
 export default PrintableBill;

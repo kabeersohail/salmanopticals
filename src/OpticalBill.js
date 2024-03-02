@@ -148,8 +148,8 @@ function OpticalBill() {
             <button onClick={handleViewFinalForm}>View Final Form</button>
           </div>
           <div className="total">
-            <p>Total: ${total}</p>
-          </div>
+            <p>Total: ₹{total}</p>
+        </div>
         </div>
       )}
     </div>
